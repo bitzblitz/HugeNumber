@@ -130,7 +130,7 @@ namespace HugeNumbers
 					{
 					negated.Add(true);
 					if(Count <= ++b)
-						negated.Add(true);
+						negated.Add(true);	// insert a bit
 					else
 						negated.Add(!this[b]); // compliment the next highest bit
 					}
@@ -141,7 +141,7 @@ namespace HugeNumbers
 			}
 
 		/// <summary>
-		/// Adds a bit at bit position B. Note that is and iterative approach to
+		/// Adds a bit at bit position B. Note that this is and iterative approach to
 		/// avoid the deep recursion that might occur in long carry scenarios. 
 		/// It should also be faster by avoiding function calls for simple operations.
 		/// </summary>
@@ -208,7 +208,7 @@ namespace HugeNumbers
 			}
 
 		/// <summary>
-		/// Subtracts a bit at bit position B. Note that is and iterative approach to
+		/// Subtracts a bit at bit position B. Note that this is and iterative approach to
 		/// avoid the deep recursion that might occur in long borrow scenarios. 
 		/// It should also be faster by avoiding function calls for simple operations.
 		/// </summary>
