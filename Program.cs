@@ -11,7 +11,7 @@ namespace HugeNumbers
 		static void Main(string[] args)
 			{
 			Console.WriteLine("Using a list of bits representing powers of -2 one can represent any number in base(-2):");
-			for(long number = -16;number <= 16;++number)
+			for(long number = -23;number <= 23;++number)
 				{
 				HugeNumber n = new HugeNumber(number);
 				Console.WriteLine($"Number: {number} in base(-2): {n}");
@@ -24,7 +24,7 @@ namespace HugeNumbers
 			Console.WriteLine("Math can be done on the bit strings:");
 			Console.WriteLine($"long.MaxValue + long.MaxValue = {max_long+max_long} base(-2)");
 			HugeNumber diff = max_long + min_long;
-			Console.WriteLine($"long.MaxValue + long.MonValue = {diff} base(-2) ({diff.ToLong()} in base 10)");
+			Console.WriteLine($"long.MaxValue + long.MinValue = {diff} base(-2) ({diff.ToLong()} in base 10)");
 			Console.ReadLine();
 			}
 		}

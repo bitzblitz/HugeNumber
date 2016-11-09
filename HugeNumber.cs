@@ -98,7 +98,7 @@ namespace HugeNumbers
 		public HugeNumber Trim()
 			{
 			int len = Count-1;
-			while(!this[len])
+			while(len >= 0 && !this[len])
 				RemoveAt(len--);  // remove high order 0's
 			return this;
 			}
@@ -161,15 +161,14 @@ namespace HugeNumbers
 				{
 				if(Count == B + 1)
 					Add(false);
+				this[B] = false;  // remove +bit_value
 				if(this[B + 1])
 					{
-					this[B] = false;  // remove +bit_value
 					this[B + 1] = false;  // also remove -2*bit_value
 					return false; // no carry
 					}
 				else
 					{
-					this[B] = false;  // remove +bit_value
 					this[B + 1] = true; // add -2*bit_value
 					if(Count == B + 2)
 						{
